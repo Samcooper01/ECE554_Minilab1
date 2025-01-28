@@ -1,7 +1,12 @@
 module Minilab1 (
-    input wire clk,
-    input wire reset_n
+    clk,
+    rst_n
 );
+
+input clk;
+input rst_n;
+
+localparam MATRIX_COLUMNS_A = 8;
 
 //8 MACS
 
@@ -9,23 +14,38 @@ module Minilab1 (
 
 //9 FIFOS
 generate
-  for (i=0; i<9; i=i+1) begin : fifo_gen
-    FIFO
-    #(
-    .DEPTH(DEPTH),
-    .DATA_WIDTH(DATA_WIDTH)
-    ) input_fifo
+
+  //Matrix A FIFOS
+  for (i=0; i<MATRIX_COLUMNS_A; i=i+1) begin : fifo_gen
+    FIFO input_fifo
     (
-    .clk(CLOCK_50),
-    .rst_n(rst_n),
-    .rden(rden[i]),
-    .wren(wren[i]),
-    .i_data(datain[i]),
-    .o_data(dataout[i]),
-    .full(full[i]),
-    .empty(empty[i])
+    .aclr(rst_n),
+	  .data(),
+	  .rdclk(clk),
+	  .rdreq(),
+	  .wrclk(clk),
+	  .wrreq(),
+	  .q(),
+	  .rdempty(),
+	  .wrfull()
     );
   end
+
+  //MATRIX B FIFO
+      FIFO input_fifo
+    (
+    .aclr(rst_n),
+	  .data(),
+	  .rdclk(clk),
+	  .rdreq(),
+	  .wrclk(clk),
+	  .wrreq(),
+	  .q(),
+	  .rdempty(),
+	  .wrfull()
+    );
+
+
 endgenerate
 
 
