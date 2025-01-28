@@ -9,7 +9,7 @@ module Minilab1 (
 
 //9 FIFOS
 generate
-  for (i=0; i<2; i=i+1) begin : fifo_gen
+  for (i=0; i<8; i=i+1) begin : fifo_gen
     FIFO
     #(
     .DEPTH(DEPTH),
