@@ -62,5 +62,41 @@ generate
 
 endgenerate
 
+//9 FIFOS
+generate
+
+  //Matrix A FIFOS
+  for (integer i=0; i<MATRIX_COLUMNS_A; i=i+1) begin : fifo_gen
+    FIFO input_fifo
+    (
+    .aclr(rst_n),
+	  .data(datain_A[i]),
+	  .rdclk(clk),
+	  .rdreq(rdreq_A[i]),
+	  .wrclk(clk),
+	  .wrreq(wrreq_A[i]),
+	  .q(dataout_A[i]),
+	  .rdempty(rdempty_A[i]),
+	  .wrfull(wrfull_A[i])
+    );
+  end
+
+  //MATRIX B FIFO
+      FIFO input_fifo
+    (
+    .aclr(rst_n),
+	  .data(datain_B),
+	  .rdclk(clk),
+	  .rdreq(rdreq_B),
+	  .wrclk(clk),
+	  .wrreq(wwreq_B),
+	  .q(dataout_B),
+	  .rdempty(rdempty_B),
+	  .wrfull(wrfull_B)
+    );
+
+
+endgenerate
+
 
 endmodule;
