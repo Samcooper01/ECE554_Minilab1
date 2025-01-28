@@ -39,7 +39,7 @@ generate
     (
     .clk(CLOCK_50),
     .rst_n(rst_n),
-    .rden(rden[i]),
+    .rden(En[i]),
     .wren(wren[i]),
     .i_data(datain[i]),
     .o_data(dataout[i]),
