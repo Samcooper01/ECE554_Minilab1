@@ -1,52 +1,101 @@
 module Minilab1 (
-    input wire clk,
-    input wire rst_n
+    clk,
+    rst_n
 );
 
+input clk;
+input rst_n;
+
+localparam MATRIX_COLUMNS_A = 8;
+localparam DATA_WIDTH = 8;
+
+//Matrix A Internal signals
+logic [DATA_WIDTH-1:0] datain_A [0:MATRIX_COLUMNS_A];
+logic [DATA_WIDTH-1:0] dataout_A [0:MATRIX_COLUMNS_A];
+
+logic rdreq_A, wrreq_A, rdempty_A, wrfull_A [0:MATRIX_COLUMNS_A];
+
+//Matrix B Internal signals
+logic [DATA_WIDTH-1:0] datain_B;
+logic [DATA_WIDTH-1:0] dataout_B;
+
+logic rdreq_B, wwreq_B, rdempty_B, wrfull_B;
+
+
 //8 MACS
-logic [8:0] En;
-logic [7:0] Ain;
-logic [8:0] Bin;
-logic [7:0] Couts;
+
+
+
+//9 FIFOS
 generate
-  for (i=0; i<8; i=i+1) begin : fifo_gen
-    MAC 
-    #(
-        .DATA_WIDTH(DATA_WIDTH)
-    ) element_mac
+
+  //Matrix A FIFOS
+  for (integer i=0; i<MATRIX_COLUMNS_A; i=i+1) begin : fifo_gen
+    FIFO input_fifo
     (
-        .clk(clk),
-        .rst_n(rst_n),
-        .En(En[7:0]),
-        .Clr(Clr),
-        .Ain(Ain[7:0]),
-        .Bin(Bin[7:0]),
-        .Couts(Couts[7:0]),
-        .EnOut(EnOut[8:1]),
-        .Bout(Bin[8:1]),
+    .aclr(rst_n),
+	  .data(datain_A[i]),
+	  .rdclk(clk),
+	  .rdreq(rdreq_A[i]),
+	  .wrclk(clk),
+	  .wrreq(wrreq_A[i]),
+	  .q(dataout_A[i]),
+	  .rdempty(rdempty_A[i]),
+	  .wrfull(wrfull_A[i])
     );
   end
+
+  //MATRIX B FIFO
+      FIFO input_fifo
+    (
+    .aclr(rst_n),
+	  .data(datain_B),
+	  .rdclk(clk),
+	  .rdreq(rdreq_B),
+	  .wrclk(clk),
+	  .wrreq(wwreq_B),
+	  .q(dataout_B),
+	  .rdempty(rdempty_B),
+	  .wrfull(wrfull_B)
+    );
+
+
 endgenerate
 
 //9 FIFOS
 generate
-  for (i=0; i<9; i=i+1) begin : fifo_gen
-    FIFO
-    #(
-    .DEPTH(DEPTH),
-    .DATA_WIDTH(DATA_WIDTH)
-    ) input_fifo
+
+  //Matrix A FIFOS
+  for (integer i=0; i<MATRIX_COLUMNS_A; i=i+1) begin : fifo_gen
+    FIFO input_fifo
     (
-    .clk(CLOCK_50),
-    .rst_n(rst_n),
-    .rden(En[i]),
-    .wren(wren[i]),
-    .i_data(datain[i]),
-    .o_data(dataout[i]),
-    .full(full[i]),
-    .empty(empty[i])
+    .aclr(rst_n),
+	  .data(datain_A[i]),
+	  .rdclk(clk),
+	  .rdreq(rdreq_A[i]),
+	  .wrclk(clk),
+	  .wrreq(wrreq_A[i]),
+	  .q(dataout_A[i]),
+	  .rdempty(rdempty_A[i]),
+	  .wrfull(wrfull_A[i])
     );
   end
+
+  //MATRIX B FIFO
+      FIFO input_fifo
+    (
+    .aclr(rst_n),
+	  .data(datain_B),
+	  .rdclk(clk),
+	  .rdreq(rdreq_B),
+	  .wrclk(clk),
+	  .wrreq(wwreq_B),
+	  .q(dataout_B),
+	  .rdempty(rdempty_B),
+	  .wrfull(wrfull_B)
+    );
+
+
 endgenerate
 
 
