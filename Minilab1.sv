@@ -61,7 +61,7 @@ generate
 	  .rdreq(En[i] | preread),
 	  .wrclk(clk),
 	  .wrreq(wrreq_A[i]),
-	  .q(dataout_A[i]),
+	  .q(Ain[i]),
 	  .rdempty(rdempty_A[i]),
 	  .wrfull(wrfull_A[i])
     );
@@ -76,7 +76,7 @@ generate
 	  .rdreq(En[0] | preread),
 	  .wrclk(clk),
 	  .wrreq(wwreq_B),
-	  .q(dataout_B),
+	  .q(Bin[0]),
 	  .rdempty(rdempty_B),
 	  .wrfull(wrfull_B)
     );
