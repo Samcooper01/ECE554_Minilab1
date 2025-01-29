@@ -79,6 +79,7 @@ generate
   end
 
   //MATRIX B FIFO
+<<<<<<< HEAD
     FIFO input_fifo_B
     (
       .aclr(rst_n),
@@ -91,6 +92,22 @@ generate
       .rdempty(rdempty_B),
       .wrfull(wrfull_B)
     );
+=======
+  FIFO input_fifo_B
+  (
+    .aclr(rst_n),
+    .data(datain_B),
+    .rdclk(clk),
+    .rdreq(En[0] | preread),
+    .wrclk(clk),
+    .wrreq(wwreq_B),
+    .q(Bin[0]),
+    .rdempty(rdempty_B),
+    .wrfull(wrfull_B)
+  );
+
+
+>>>>>>> c2b92dd67595ffb3a6b50c2f950b7f6b564044fa
 endgenerate
 
 assign all_full = &wrfull_A & wrfull_B; //AND all wrfull signals from A and B
