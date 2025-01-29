@@ -63,33 +63,33 @@ endgenerate
 //9 FIFOS
 generate
   //Matrix A FIFOS
-  for (i=0; i<MATRIX_COLUMNS_A; i=i+1) begin : fifo_gen
-    FIFO input_fifo
+  for (integer i=0; i<MATRIX_COLUMNS_A; i=i+1) begin : fifo_gen
+    FIFO input_fifo_A
     (
-    .aclr(rst_n),
-	  .data(datain_A[i]),
-	  .rdclk(clk),
-	  .rdreq(En[i]),
-	  .wrclk(clk),
-	  .wrreq(wrreq_A[i]),
-	  .q(dataout_A[i]),
-	  .rdempty(rdempty_A[i]),
-	  .wrfull(wrfull_A[i])
+      .aclr(rst_n),
+      .data(datain_A[i]),
+      .rdclk(clk),
+      .rdreq(En[i] | preread),
+      .wrclk(clk),
+      .wrreq(wrreq_A[i]),
+      .q(Ain[i]),
+      .rdempty(rdempty_A[i]),
+      .wrfull(wrfull_A[i])
     );
   end
 
   //MATRIX B FIFO
-      FIFO input_fifo
+    FIFO input_fifo_B
     (
-    .aclr(rst_n),
-	  .data(datain_B),
-	  .rdclk(clk),
-	  .rdreq(En[0]),
-	  .wrclk(clk),
-	  .wrreq(wwreq_B),
-	  .q(dataout_B),
-	  .rdempty(rdempty_B),
-	  .wrfull(wrfull_B)
+      .aclr(rst_n),
+      .data(datain_B),
+      .rdclk(clk),
+      .rdreq(En[0] | preread),
+      .wrclk(clk),
+      .wrreq(wwreq_B),
+      .q(Bin[0]),
+      .rdempty(rdempty_B),
+      .wrfull(wrfull_B)
     );
 endgenerate
 
