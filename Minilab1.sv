@@ -68,18 +68,18 @@ generate
   end
 
   //MATRIX B FIFO
-    FIFO input_fifo_B
-    (
-      .aclr(rst_n),
-      .data(datain_B),
-      .rdclk(clk),
-      .rdreq(En[0] | preread),
-      .wrclk(clk),
-      .wrreq(wwreq_B),
-      .q(Bin[0]),
-      .rdempty(rdempty_B),
-      .wrfull(wrfull_B)
-    );
+  FIFO input_fifo_B
+  (
+    .aclr(rst_n),
+    .data(datain_B),
+    .rdclk(clk),
+    .rdreq(En[0] | preread),
+    .wrclk(clk),
+    .wrreq(wwreq_B),
+    .q(Bin[0]),
+    .rdempty(rdempty_B),
+    .wrfull(wrfull_B)
+  );
 
 
 endgenerate
