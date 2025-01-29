@@ -53,7 +53,7 @@ generate
 
   //Matrix A FIFOS
   for (integer i=0; i<MATRIX_COLUMNS_A; i=i+1) begin : fifo_gen
-    FIFO input_fifo
+    FIFO input_fifo_A
     (
       .aclr(rst_n),
       .data(datain_A[i]),
@@ -68,7 +68,7 @@ generate
   end
 
   //MATRIX B FIFO
-    FIFO input_fifo
+    FIFO input_fifo_B
     (
       .aclr(rst_n),
       .data(datain_B),
