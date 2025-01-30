@@ -69,7 +69,7 @@ generate
         .Ain(Ain[7:0]),
         .Bin(Bin[7:0]),
         .Couts(Couts[7:0]),
-        .EnOut(EnOut[8:1]),
+        .EnOut(En[8:1]),
         .Bout(Bin[8:1])
     );
   end
