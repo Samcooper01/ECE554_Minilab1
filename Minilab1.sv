@@ -17,6 +17,8 @@ localparam DONE = 2'b00;
 logic [DATA_WIDTH-1:0] datain_A [0:MATRIX_COLUMNS_A];
 logic [DATA_WIDTH-1:0] dataout_A [0:MATRIX_COLUMNS_A];
 
+logic preread;
+
 logic [0:MATRIX_COLUMNS_A] rdreq_A, wrreq_A, rdempty_A, wrfull_A;
 
 //Matrix B Internal signals
@@ -39,9 +41,9 @@ logic wait_req;
 
 //8 MACS
 logic [8:0] En;
-logic [7:0] Ain;
-logic [8:0] Bin;
-logic [7:0] Couts;
+logic [7:0] Ain [7:0];
+logic [8:0] Bin [7:0];
+logic Couts [23:1];
 
 //Memory Interface
 mem_wrapper iMEM( .clk(clk), 
@@ -55,7 +57,7 @@ mem_wrapper iMEM( .clk(clk),
 genvar i;
 
 generate
-  for (i=0; i<8; i=i+1) begin : fifo_gen
+  for (i=0; i<8; i=i+1) begin : mac_gen
     MAC 
     #(
         .DATA_WIDTH(DATA_WIDTH)
@@ -63,13 +65,13 @@ generate
     (
         .clk(clk),
         .rst_n(rst_n),
-        .En(En[7:0] & ~rdempty_A),
+        .En(En[i] & ~rdempty_A),
         .Clr(Clr),
-        .Ain(Ain[7:0]),
-        .Bin(Bin[7:0]),
-        .Couts(Couts[7:0]),
-        .EnOut(En[8:1]),
-        .Bout(Bin[8:1])
+        .Ain(Ain[i]),
+        .Bin(Bin[i]),
+        .Couts(Couts[i]),
+        .EnOut(En[i+1]),
+        .Bout(Bin[i+1])
     );
   end
 endgenerate
@@ -79,7 +81,7 @@ genvar z;
 //9 FIFOS
 generate
   //Matrix A FIFOS
-  for (z=0; i<MATRIX_COLUMNS_A; z=z+1) begin : fifo_gen
+  for (z=0; z<MATRIX_COLUMNS_A; z=z+1) begin : fifo_gen
     FIFO input_fifo_A
     (
       .aclr(rst_n),
@@ -137,21 +139,21 @@ always @(posedge clk or negedge rst_n) begin
         end
         if (all_full) begin
           rd_mem <= 1'b0;
-          wreq_B <= 1'b0;
+          wwreq_B <= 1'b0;
           for(integer p = 0; p < MATRIX_COLUMNS_A; p++) begin
-            wreq_A[p] <= 1'b0;
+            wrreq_A[p] <= 1'b0;
           end
           preread <= 1'b1;
         end
         //Fill all fifos with memory until full
         rd_mem <= 1'b1;
-        wreq_B <= 1'b0;
+        wwreq_B <= 1'b0;
         for(integer p = 0; p < MATRIX_COLUMNS_A; p++) begin
-          wreq_A[p] <= 1'b0;
+          wrreq_A[p] <= 1'b0;
         end
         if (rd_valid & ~wait_req) begin
           if(rd_addr == 32'h0000) begin
-            datain_B[rd_addr] = rd_data;
+            datain_B[rd_addr] <= rd_data;
             wwreq_B <= 1'b1;
           end
           else begin
@@ -181,4 +183,4 @@ always @(posedge clk or negedge rst_n) begin
 
 end
 
-endmodule;
+endmodule

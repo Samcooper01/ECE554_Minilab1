@@ -1,3 +1,5 @@
+`timescale 1 ps / 1 ps
+
 module Minilab1_tb ();
 logic clk;
 logic rst_n;
@@ -18,4 +20,4 @@ always
     #5 clk = ~clk;
 
 
-endmodule;
+endmodule
