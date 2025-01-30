@@ -36,6 +36,7 @@ logic [8:0] En;
 logic [7:0] Ain;
 logic [8:0] Bin;
 logic [7:0] Couts;
+logic [7:0] rdempty_A
 
 genvar i;
 
@@ -48,7 +49,7 @@ generate
     (
         .clk(clk),
         .rst_n(rst_n),
-        .En(En[7:0]),
+        .En(En[7:0] & ~rdempty_A),
         .Clr(Clr),
         .Ain(Ain[7:0]),
         .Bin(Bin[7:0]),
