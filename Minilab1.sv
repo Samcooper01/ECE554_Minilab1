@@ -17,7 +17,7 @@ localparam DONE = 2'b00;
 logic [DATA_WIDTH-1:0] datain_A [0:MATRIX_COLUMNS_A];
 logic [DATA_WIDTH-1:0] dataout_A [0:MATRIX_COLUMNS_A];
 
-logic rdreq_A, wrreq_A, rdempty_A, wrfull_A [0:MATRIX_COLUMNS_A];
+logic [0:MATRIX_COLUMNS_A] rdreq_A, wrreq_A, rdempty_A, wrfull_A;
 
 //Matrix B Internal signals
 logic [DATA_WIDTH-1:0] datain_B;
