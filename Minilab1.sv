@@ -29,6 +29,12 @@ logic rdreq_B, wwreq_B, rdempty_B, wrfull_B;
 logic [1:0] state;
 logic all_full, all_empty;
 
+//Memory Signals
+logic [31:0] rd_addr;
+logic rd_mem;
+logic [63:0] rd_data;
+logic rd_valid;
+logic wait_req;
 
 
 //8 MACS
@@ -36,6 +42,15 @@ logic [8:0] En;
 logic [7:0] Ain;
 logic [8:0] Bin;
 logic [7:0] Couts;
+
+//Memory Interface
+mem_wrapper iMEM( .clk(clk), 
+                  .reset_n(rst_n), 
+                  .address(rd_addr), 
+                  .read(rd_mem), 
+                  .readdata(rd_data),
+                  .readdatavalid(rd_valid),
+                  .waitrequest(wait_req));
 
 genvar i;
 
@@ -54,7 +69,7 @@ generate
         .Bin(Bin[7:0]),
         .Couts(Couts[7:0]),
         .EnOut(EnOut[8:1]),
-        .Bout(Bin[8:1]),
+        .Bout(Bin[8:1])
     );
   end
 endgenerate
@@ -93,28 +108,62 @@ generate
     );
 endgenerate
 
-assign all_full = &wrfull_A & wrfull_B; //AND all wrfull signals from A and B
+assign all_full = &wrfull_A & wrfull_B; //AND all wrfull signals from A and B TODO: MAKE SURE THIS WORKS
 assign all_empty = &rdempty_A & rdempty_B; //AND all rdempty signals from A and B
+
+//read address incremental counter
+always @(posedge rd_valid or negedge rst_n) begin
+  if(~rst_n) begin
+    rd_addr <= '0;
+  end
+  else(rd_valid) begin
+    rd_addr <= rd_addr + 1'b1;
+  end
+end
 
 always @(posedge clk or negedge rst_n) begin
   if (~rst_n) begin
     state <= FILL;
+    rd_mem <= 1'b0;
   end
   else begin
     case(state)
       FILL:
       begin
+
         if (all_full) begin
           state <= CALC;
         end
         //Fill all fifos with memory until full
+        rd_mem <= 1'b1;
+        wreq_B <= 1'b0;
+        for(integer p = 0; p < MATRIX_COLUMNS_A; p++) begin
+          wreq_A[p] <= 1'b0;
+        end
+        if (rd_valid & ~wait_req) begin
+          if(rd_addr == 32'h0000) begin
+            datain_B[rd_addr] = rd_data;
+            wwreq_B <= 1'b1;
+          end
+          else begin
+            datain_A[rd_addr] = rd_data;
+            wrreq_A[rd_addr] <= 1'b1;
+          end
+        end
 
       end
       CALC:
       begin
+        rd_mem <= 1'b0;
+        wreq_B <= 1'b0;
+        for(integer p = 0; p < MATRIX_COLUMNS_A; p++) begin
+          wreq_A[p] <= 1'b0;
+        end
+
         if (all_empty) begin
           state <= DONE;
         end
+        
         //Read fifos until all values have been read
 
       end
