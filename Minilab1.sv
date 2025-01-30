@@ -166,13 +166,23 @@ always @(posedge clk or negedge rst_n) begin
       CALC:
       begin
 
-        if (all_empty) begin
-          state <= DONE;
+        if (rdempty_B) begin
+          state <= WAIT;
         end
         
         //Read fifos until all values have been read
+        En[1] <= 1'b1;
+
 
       end
+      WAIT:
+      begin
+        En[0] <= 1'b0;
+        if (all_empty) begin
+          state <= DONE;
+        end
+      end
+      
       DONE:
       begin
         //Display result onto the LEDS
