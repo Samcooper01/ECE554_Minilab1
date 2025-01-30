@@ -171,7 +171,7 @@ always @(posedge clk or negedge rst_n) begin
         end
         
         //Read fifos until all values have been read
-        En[1] <= 1'b1;
+        En[0] <= 1'b1;
 
 
       end
@@ -182,7 +182,7 @@ always @(posedge clk or negedge rst_n) begin
           state <= DONE;
         end
       end
-      
+
       DONE:
       begin
         //Display result onto the LEDS
