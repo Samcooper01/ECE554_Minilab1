@@ -74,22 +74,23 @@ generate
   end
 endgenerate
 
+genvar z;
 
 //9 FIFOS
 generate
   //Matrix A FIFOS
-  for (integer i=0; i<MATRIX_COLUMNS_A; i=i+1) begin : fifo_gen
+  for (z=0; i<MATRIX_COLUMNS_A; z=z+1) begin : fifo_gen
     FIFO input_fifo_A
     (
       .aclr(rst_n),
-      .data(datain_A[i]),
+      .data(datain_A[z]),
       .rdclk(clk),
-      .rdreq(En[i] | preread),
+      .rdreq(En[z] | preread),
       .wrclk(clk),
-      .wrreq(wrreq_A[i]),
-      .q(Ain[i]),
-      .rdempty(rdempty_A[i]),
-      .wrfull(wrfull_A[i])
+      .wrreq(wrreq_A[z]),
+      .q(Ain[z]),
+      .rdempty(rdempty_A[z]),
+      .wrfull(wrfull_A[z])
     );
   end
 
@@ -116,7 +117,7 @@ always @(posedge rd_valid or negedge rst_n) begin
   if(~rst_n) begin
     rd_addr <= '0;
   end
-  else(rd_valid) begin
+  else if (rd_valid) begin
     rd_addr <= rd_addr + 1'b1;
   end
 end
