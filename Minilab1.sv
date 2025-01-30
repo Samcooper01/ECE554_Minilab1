@@ -42,7 +42,6 @@ logic [8:0] En;
 logic [7:0] Ain;
 logic [8:0] Bin;
 logic [7:0] Couts;
-logic [7:0] rdempty_A
 
 //Memory Interface
 mem_wrapper iMEM( .clk(clk), 
