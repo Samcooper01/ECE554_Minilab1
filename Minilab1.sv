@@ -23,7 +23,7 @@ logic [0:MATRIX_COLUMNS_A] rdreq_A, wrreq_A, rdempty_A, wrfull_A;
 logic [DATA_WIDTH-1:0] datain_B;
 logic [DATA_WIDTH-1:0] dataout_B;
 
-logic [0:MATRIX_COLUMNS_B] rdreq_B, wwreq_B, rdempty_B, wrfull_B;
+logic rdreq_B, wwreq_B, rdempty_B, wrfull_B;
 
 //State Machine
 logic [1:0] state;
