@@ -130,9 +130,17 @@ always @(posedge clk or negedge rst_n) begin
     case(state)
       FILL:
       begin
-
-        if (all_full) begin
+        if (preread) begin
+          preread <= 1'b0;
           state <= CALC;
+        end
+        if (all_full) begin
+          rd_mem <= 1'b0;
+          wreq_B <= 1'b0;
+          for(integer p = 0; p < MATRIX_COLUMNS_A; p++) begin
+            wreq_A[p] <= 1'b0;
+          end
+          preread <= 1'b1;
         end
         //Fill all fifos with memory until full
         rd_mem <= 1'b1;
@@ -154,11 +162,6 @@ always @(posedge clk or negedge rst_n) begin
       end
       CALC:
       begin
-        rd_mem <= 1'b0;
-        wreq_B <= 1'b0;
-        for(integer p = 0; p < MATRIX_COLUMNS_A; p++) begin
-          wreq_A[p] <= 1'b0;
-        end
 
         if (all_empty) begin
           state <= DONE;
