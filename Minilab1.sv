@@ -40,10 +40,10 @@ logic wait_req;
 
 
 //8 MACS
-logic [8:0] En;
+logic En [7:0];
 logic [7:0] Ain [7:0];
 logic [8:0] Bin [7:0];
-logic Couts [23:1];
+logic [23:0] Couts [7:0];
 
 //Memory Interface
 mem_wrapper iMEM( .clk(clk), 
