@@ -7,11 +7,11 @@ input clk,
 input rst_n,
 input En,
 input Clr,
-input [DATA_WIDTH-1:0] Ain,
-input [DATA_WIDTH-1:0] Bin,
-output [DATA_WIDTH*3-1:0] Couts,
+input [7:0] Ain,
+input [7:0] Bin,
+output [23:0] Couts,
 output EnOut,
-output [DATA_WIDTH-1:0] Bout
+output [7:0] Bout
 );
 
 reg [DATA_WIDTH*3-1:0]sum_int;

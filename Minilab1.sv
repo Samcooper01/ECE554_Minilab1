@@ -40,9 +40,9 @@ logic wait_req;
 
 
 //8 MACS
-logic En [7:0];
+logic [7:0] En;
 logic [7:0] Ain [7:0];
-logic [8:0] Bin [7:0];
+logic [7:0] Bin [8:0];
 logic [23:0] Couts [7:0];
 
 //Memory Interface
