@@ -12,7 +12,7 @@ initial begin
 
     repeat (5) @(posedge clk);
 
-    
+    $stop;
 
 end
 

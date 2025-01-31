@@ -11,7 +11,8 @@ localparam DATA_WIDTH = 8;
 
 localparam FILL = 2'b00;
 localparam CALC = 2'b01;
-localparam DONE = 2'b00;
+localparam WAIT = 2'b10;
+localparam DONE = 2'b11;
 
 //Matrix A Internal signals
 logic [DATA_WIDTH-1:0] datain_A [0:MATRIX_COLUMNS_A];
