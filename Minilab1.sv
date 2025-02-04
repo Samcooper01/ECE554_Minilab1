@@ -80,9 +80,9 @@ logic rd_valid;
 logic wait_req;
 
 //8 MACS
-logic En [7:0];
+logic En [8:0];
 logic [7:0] Ain [7:0];
-logic [7:0] Bin [7:0];
+logic [7:0] Bin [8:0];
 logic [23:0] Couts [7:0];
 logic read_B;
 logic read_A [7:0];
