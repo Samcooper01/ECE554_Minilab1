@@ -31,6 +31,8 @@ logic [3:0] col_counter;
 logic clear_col_counter;
 logic clear_col_counter_ff;
 logic buffer_a_or_b;
+logic [2:0] A_read_sel;
+logic [7:0] a_out [7:0];
 
 logic preread;
 
@@ -56,12 +58,20 @@ logic rd_valid;
 logic wait_req;
 
 //8 MACS
-logic [7:0] En;
+logic En [7:0];
 logic [7:0] Ain [7:0];
 logic [7:0] Bin [7:0];
 logic [23:0] Couts [7:0];
 logic read_B;
 logic read_A [7:0];
+logic rdempty_0_ff;
+logic rdempty_1_ff;
+logic rdempty_2_ff;
+logic rdempty_3_ff;
+logic rdempty_4_ff;
+logic rdempty_5_ff;
+logic rdempty_6_ff;
+logic rdempty_7_ff;
 
 //Memory Interface
 mem_wrapper iMEM( .clk(clk), 
@@ -85,8 +95,9 @@ generate
         .clk(clk),
         .rst_n(rst_n),
         .En(En[i]),
+        .start_calc(start_calc),
         .Clr(Clr),
-        .Ain(Ain[i]),
+        .Ain(a_out[i]),
         .Bin(Bin[i]),
         .Couts(Couts[i]),
         .EnOut(En[i+1]),
@@ -106,10 +117,10 @@ generate
       .aclr(~rst_n),
       .data(datain),
       .rdclk(clk),
-      .rdreq(read_A[z] | preread),
+      .rdreq(read_A[z]),
       .wrclk(clk),
       .wrreq(wrreq_A[z]),
-      .q(),
+      .q(a_out[z]),
       .rdempty(rdempty_A[z]),
       .wrfull(wrfull_A[z])
     );
@@ -120,10 +131,10 @@ generate
       .aclr(~rst_n),
       .data(datain),
       .rdclk(clk),
-      .rdreq(read_B | preread),
+      .rdreq(start_read),
       .wrclk(clk),
       .wrreq(wwreq_B),
-      .q(),
+      .q(Bin[0]),
       .rdempty(rdempty_B),
       .wrfull(wrfull_B)
     );
@@ -241,26 +252,34 @@ end
 
 assign buf_all_full = (rd_addr == 9) ? 1'b1 : 1'b0; //We use 9 here bc its one clock cycle after last save
 assign fifo_all_full = wrfull_A[0] & wrfull_A[1] & wrfull_A[2] & wrfull_A[3] & wrfull_A[4] & wrfull_A[5] & wrfull_A[6] & wrfull_A[7] & wrfull_B;
+assign fifo_all_empty = rdempty_A[0] & rdempty_A[1] & rdempty_A[2] & rdempty_A[3] & rdempty_A[4] & rdempty_A[5] & rdempty_A[6] & rdempty_A[7] & rdempty_B;
 
-//B read inc
-always @(posedge clk or negedge rst_n) begin
-  if(~rst_n) begin
-    read_B <= 0;
-  end
-end
+assign read_B = (~rst_n) ? 0 : (((A_read_sel == 0) & start_read));
 
 //A read inc
 always @(posedge clk or negedge rst_n) begin
   if(~rst_n) begin
-    read_A[0] = 0;
-    read_A[1] = 0;
-    read_A[2] = 0;
-    read_A[3] = 0;
-    read_A[4] = 0;
-    read_A[5] = 0;
-    read_A[7] = 0;
+    A_read_sel <= '0;
+  end
+  else if(start_read) begin
+    A_read_sel <= A_read_sel + 1;
   end
 end
+
+assign read_A[0] = (~rst_n) ? 0 : (start_read);
+assign read_A[1] = (~rst_n) ? 0 : (start_read);
+assign read_A[2] = (~rst_n) ? 0 : (start_read);
+assign read_A[3] = (~rst_n) ? 0 : (start_read);
+assign read_A[4] = (~rst_n) ? 0 : (start_read);
+assign read_A[5] = (~rst_n) ? 0 : (start_read);
+assign read_A[6] = (~rst_n) ? 0 : (start_read);
+assign read_A[7] = (~rst_n) ? 0 : (start_read);
+
+always_ff @(posedge clk) begin
+  rdempty_0_ff <= rdempty_A[0];
+end
+
+assign En[0] = start_calc & ~rdempty_0_ff;
 
 // next state flop
 always @(posedge clk, negedge rst_n) begin
@@ -309,7 +328,7 @@ always_comb begin
         start_read = 1;
       end
       CALC: begin
-        if(all_empty) begin
+        if(fifo_all_empty) begin
           next_state = DONE;
         end
         else begin
