@@ -191,14 +191,14 @@ assign datain = (buffer_a_or_b) ? ((col_counter == 7) ? datain_B[56:63] :
                                   (col_counter == 2) ? datain_B[16:23] :
                                   (col_counter == 1) ? datain_B[8:15] :
                                   (col_counter == 0) ? datain_B[0:7] : datain_B[0:7]) :
-                                  ((col_counter == 7) ? datain_A[buf_rd_addr][56:63] :
-                                  (col_counter == 6) ? datain_A[buf_rd_addr][48:55] : 
-                                  (col_counter == 5) ? datain_A[buf_rd_addr][40:47] :
-                                  (col_counter == 4) ? datain_A[buf_rd_addr][32:39] :
-                                  (col_counter == 3) ? datain_A[buf_rd_addr][24:31] :
-                                  (col_counter == 2) ? datain_A[buf_rd_addr][16:23] :
-                                  (col_counter == 1) ? datain_A[buf_rd_addr][8:15] :
-                                  (col_counter == 0) ? datain_A[buf_rd_addr][0:7] : datain_A[buf_rd_addr][0:7]);
+                                  ((col_counter == 7) ? datain_A[buf_rd_addr-1][56:63] :
+                                  (col_counter == 6) ? datain_A[buf_rd_addr-1][48:55] : 
+                                  (col_counter == 5) ? datain_A[buf_rd_addr-1][40:47] :
+                                  (col_counter == 4) ? datain_A[buf_rd_addr-1][32:39] :
+                                  (col_counter == 3) ? datain_A[buf_rd_addr-1][24:31] :
+                                  (col_counter == 2) ? datain_A[buf_rd_addr-1][16:23] :
+                                  (col_counter == 1) ? datain_A[buf_rd_addr-1][8:15] :
+                                  (col_counter == 0) ? datain_A[buf_rd_addr-1][0:7] : datain_A[buf_rd_addr-1][0:7]);
 
 
 
@@ -226,16 +226,16 @@ always @(posedge clk or negedge rst_n) begin
     datain_A[6] <= '0;
     datain_A[7] <= '0;
   end
-  else if (rd_valid) begin
+  else if (rd_valid & (state == 1'b1)) begin
     if(rd_addr == 0) datain_B = rd_data;
-    if(rd_addr == 1) datain_A[0] = rd_data;
-    if(rd_addr == 2) datain_A[1] = rd_data;
-    if(rd_addr == 3) datain_A[2] = rd_data;
-    if(rd_addr == 4) datain_A[3] = rd_data;
-    if(rd_addr == 5) datain_A[4] = rd_data;
-    if(rd_addr == 6) datain_A[5] = rd_data;
-    if(rd_addr == 7) datain_A[6] = rd_data;
-    if(rd_addr == 8) datain_A[7] = rd_data;
+    if(rd_addr == 2) datain_A[0] = rd_data;
+    if(rd_addr == 3) datain_A[1] = rd_data;
+    if(rd_addr == 4) datain_A[2] = rd_data;
+    if(rd_addr == 5) datain_A[3] = rd_data;
+    if(rd_addr == 6) datain_A[4] = rd_data;
+    if(rd_addr == 7) datain_A[5] = rd_data;
+    if(rd_addr == 8) datain_A[6] = rd_data;
+    if(rd_addr == 9) datain_A[7] = rd_data;
   end
   else begin
     datain_B <= datain_B;
@@ -250,7 +250,7 @@ always @(posedge clk or negedge rst_n) begin
   end
 end
 
-assign buf_all_full = (rd_addr == 9) ? 1'b1 : 1'b0; //We use 9 here bc its one clock cycle after last save
+assign buf_all_full = (rd_addr == 10) ? 1'b1 : 1'b0; //We use 9 here bc its one clock cycle after last save
 assign fifo_all_full = wrfull_A[0] & wrfull_A[1] & wrfull_A[2] & wrfull_A[3] & wrfull_A[4] & wrfull_A[5] & wrfull_A[6] & wrfull_A[7] & wrfull_B;
 assign fifo_all_empty = rdempty_A[0] & rdempty_A[1] & rdempty_A[2] & rdempty_A[3] & rdempty_A[4] & rdempty_A[5] & rdempty_A[6] & rdempty_A[7] & rdempty_B;
 
