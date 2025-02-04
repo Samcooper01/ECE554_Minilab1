@@ -1,0 +1,838 @@
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.Minilab1_tb
+# vsim work.Minilab1_tb 
+# Start time: 12:11:35 on Feb 04,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(59): Module 'altsyncram' is not defined.
+#  For instance 'altsyncram_component' at path 'Minilab1_tb.iDUT.iMEM.memory'
+# ** Error: I:/ECE554/Minilab1/ECE554_Minilab1/FIFO.v(75): Module 'dcfifo' is not defined.
+#  For instance 'dcfifo_component' at path 'Minilab1_tb.iDUT.input_fifo_B'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=0.
+# Error loading design
+# End time: 12:11:39 on Feb 04,2025, Elapsed time: 0:00:04
+# Errors: 2, Warnings: 5
+vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L
+# No design specified
+C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.testbench_tb -
+# invalid command name "C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model"
+voptargs=+acc
+# invalid command name "voptargs=+acc"
+vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.testbench_tb -
+# ** UI-Msg (Error): (vish-3296) Unknown option '-'.
+# Use the -help option for complete vsim usage.
+# Error loading design
+vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.testbench_tb -voptargs=+acc
+# vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.testbench_tb -voptargs="+acc" 
+# Start time: 12:14:23 on Feb 04,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error: (vopt-13130) Failed to find design unit 'testbench_tb'.
+#         Searched libraries:
+#             C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf
+#             C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model
+#             work
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Error loading design
+# End time: 12:14:28 on Feb 04,2025, Elapsed time: 0:00:05
+# Errors: 1, Warnings: 2
+vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.Minilab1_tb -voptargs=+acc
+# vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.Minilab1_tb -voptargs="+acc" 
+# Start time: 12:15:01 on Feb 04,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: $MODEL_TECH/../intel/verilog/src/altera_mf.v(31792): (vopt-2685) [TFMPC] - Too few port connections for 'DCFIFO_MW'.  Expected 14, found 13.
+# ** Warning: $MODEL_TECH/../intel/verilog/src/altera_mf.v(31792): (vopt-2718) [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Note: (vopt-143) Recognized 1 FSM in module "mem_wrapper(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "Minilab1(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+run
+# ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(32)
+#    Time: 2535 ps  Iteration: 0  Instance: /Minilab1_tb
+# Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 32
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+add wave -position insertpoint  \
+sim:/Minilab1_tb/iDUT/clk \
+sim:/Minilab1_tb/iDUT/rst_n \
+sim:/Minilab1_tb/iDUT/datain_A \
+sim:/Minilab1_tb/iDUT/datain_B \
+sim:/Minilab1_tb/iDUT/buf_rd_addr \
+sim:/Minilab1_tb/iDUT/datain \
+sim:/Minilab1_tb/iDUT/wrreq_A \
+sim:/Minilab1_tb/iDUT/wwreq_B \
+sim:/Minilab1_tb/iDUT/a_col_sel \
+sim:/Minilab1_tb/iDUT/b_col_sel \
+sim:/Minilab1_tb/iDUT/col_counter \
+sim:/Minilab1_tb/iDUT/clear_col_counter \
+sim:/Minilab1_tb/iDUT/clear_col_counter_ff \
+sim:/Minilab1_tb/iDUT/buffer_a_or_b \
+sim:/Minilab1_tb/iDUT/A_read_sel \
+sim:/Minilab1_tb/iDUT/a_out \
+sim:/Minilab1_tb/iDUT/preread \
+sim:/Minilab1_tb/iDUT/rdreq_A \
+sim:/Minilab1_tb/iDUT/rdempty_A \
+sim:/Minilab1_tb/iDUT/wrfull_A \
+sim:/Minilab1_tb/iDUT/rdreq_B \
+sim:/Minilab1_tb/iDUT/rdempty_B \
+sim:/Minilab1_tb/iDUT/wrfull_B \
+sim:/Minilab1_tb/iDUT/state \
+sim:/Minilab1_tb/iDUT/next_state \
+sim:/Minilab1_tb/iDUT/all_full \
+sim:/Minilab1_tb/iDUT/all_empty \
+sim:/Minilab1_tb/iDUT/buf_begin_fill \
+sim:/Minilab1_tb/iDUT/buf_all_full \
+sim:/Minilab1_tb/iDUT/fifo_begin_fill \
+sim:/Minilab1_tb/iDUT/fifo_all_full \
+sim:/Minilab1_tb/iDUT/start_calc \
+sim:/Minilab1_tb/iDUT/start_read \
+sim:/Minilab1_tb/iDUT/rd_addr \
+sim:/Minilab1_tb/iDUT/rd_mem \
+sim:/Minilab1_tb/iDUT/rd_data \
+sim:/Minilab1_tb/iDUT/rd_valid \
+sim:/Minilab1_tb/iDUT/wait_req \
+sim:/Minilab1_tb/iDUT/En \
+sim:/Minilab1_tb/iDUT/Ain \
+sim:/Minilab1_tb/iDUT/Bin \
+sim:/Minilab1_tb/iDUT/Couts \
+sim:/Minilab1_tb/iDUT/read_B \
+sim:/Minilab1_tb/iDUT/read_A \
+sim:/Minilab1_tb/iDUT/rdempty_0_ff \
+sim:/Minilab1_tb/iDUT/rdempty_1_ff \
+sim:/Minilab1_tb/iDUT/rdempty_2_ff \
+sim:/Minilab1_tb/iDUT/rdempty_3_ff \
+sim:/Minilab1_tb/iDUT/rdempty_4_ff \
+sim:/Minilab1_tb/iDUT/rdempty_5_ff \
+sim:/Minilab1_tb/iDUT/rdempty_6_ff \
+sim:/Minilab1_tb/iDUT/rdempty_7_ff \
+sim:/Minilab1_tb/iDUT/fifo_all_empty
+run -all
+# ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(32)
+#    Time: 2535 ps  Iteration: 0  Instance: /Minilab1_tb
+# Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 32
+# Causality operation skipped due to absence of debug database file
+# Compile of FIFO.v was successful.
+# Compile of mac.sv failed with 1 errors.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 1 failed with 1 error.
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+run -all
+# ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(32)
+#    Time: 2535 ps  Iteration: 0  Instance: /Minilab1_tb
+# Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 32
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+run -all
+# ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(32)
+#    Time: 2535 ps  Iteration: 0  Instance: /Minilab1_tb
+# Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 32
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "Minilab1(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+run -all
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+run -all
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "Minilab1(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+run -all
+# ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(32)
+#    Time: 2695 ps  Iteration: 0  Instance: /Minilab1_tb
+# Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 32
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.
+run -all
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "Minilab1(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+run -all
+# ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(32)
+#    Time: 2675 ps  Iteration: 0  Instance: /Minilab1_tb
+# Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 32
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+run -all
+# ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(32)
+#    Time: 2675 ps  Iteration: 0  Instance: /Minilab1_tb
+# Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 32
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "Minilab1(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+run -all
+# ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(32)
+#    Time: 2675 ps  Iteration: 0  Instance: /Minilab1_tb
+# Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 32
+add wave -position insertpoint  \
+sim:/Minilab1_tb/iDUT/clk \
+sim:/Minilab1_tb/iDUT/rst_n \
+sim:/Minilab1_tb/iDUT/datain_A \
+sim:/Minilab1_tb/iDUT/datain_B \
+sim:/Minilab1_tb/iDUT/buf_rd_addr \
+sim:/Minilab1_tb/iDUT/datain \
+sim:/Minilab1_tb/iDUT/wrreq_A \
+sim:/Minilab1_tb/iDUT/wwreq_B \
+sim:/Minilab1_tb/iDUT/a_col_sel \
+sim:/Minilab1_tb/iDUT/b_col_sel \
+sim:/Minilab1_tb/iDUT/col_counter \
+sim:/Minilab1_tb/iDUT/clear_col_counter \
+sim:/Minilab1_tb/iDUT/clear_col_counter_ff \
+sim:/Minilab1_tb/iDUT/buffer_a_or_b \
+sim:/Minilab1_tb/iDUT/A_read_sel \
+sim:/Minilab1_tb/iDUT/a_out \
+sim:/Minilab1_tb/iDUT/preread \
+sim:/Minilab1_tb/iDUT/rdreq_A \
+sim:/Minilab1_tb/iDUT/rdempty_A \
+sim:/Minilab1_tb/iDUT/wrfull_A \
+sim:/Minilab1_tb/iDUT/rdreq_B \
+sim:/Minilab1_tb/iDUT/rdempty_B \
+sim:/Minilab1_tb/iDUT/wrfull_B \
+sim:/Minilab1_tb/iDUT/state \
+sim:/Minilab1_tb/iDUT/next_state \
+sim:/Minilab1_tb/iDUT/all_full \
+sim:/Minilab1_tb/iDUT/all_empty \
+sim:/Minilab1_tb/iDUT/buf_begin_fill \
+sim:/Minilab1_tb/iDUT/buf_all_full \
+sim:/Minilab1_tb/iDUT/fifo_begin_fill \
+sim:/Minilab1_tb/iDUT/fifo_all_full \
+sim:/Minilab1_tb/iDUT/start_calc \
+sim:/Minilab1_tb/iDUT/start_read \
+sim:/Minilab1_tb/iDUT/rd_addr \
+sim:/Minilab1_tb/iDUT/rd_mem \
+sim:/Minilab1_tb/iDUT/rd_data \
+sim:/Minilab1_tb/iDUT/rd_valid \
+sim:/Minilab1_tb/iDUT/wait_req \
+sim:/Minilab1_tb/iDUT/En \
+sim:/Minilab1_tb/iDUT/Ain \
+sim:/Minilab1_tb/iDUT/Bin \
+sim:/Minilab1_tb/iDUT/Couts \
+sim:/Minilab1_tb/iDUT/read_B \
+sim:/Minilab1_tb/iDUT/read_A \
+sim:/Minilab1_tb/iDUT/rdempty_0_ff \
+sim:/Minilab1_tb/iDUT/rdempty_0_ff2 \
+sim:/Minilab1_tb/iDUT/rdempty_1_ff \
+sim:/Minilab1_tb/iDUT/rdempty_2_ff \
+sim:/Minilab1_tb/iDUT/rdempty_3_ff \
+sim:/Minilab1_tb/iDUT/rdempty_4_ff \
+sim:/Minilab1_tb/iDUT/rdempty_5_ff \
+sim:/Minilab1_tb/iDUT/rdempty_6_ff \
+sim:/Minilab1_tb/iDUT/rdempty_7_ff \
+sim:/Minilab1_tb/iDUT/fifo_all_empty
+add wave -position insertpoint  \
+{sim:/Minilab1_tb/iDUT/fifo_gen[7]/input_fifo_A/aclr} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[7]/input_fifo_A/data} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[7]/input_fifo_A/rdclk} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[7]/input_fifo_A/rdreq} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[7]/input_fifo_A/wrclk} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[7]/input_fifo_A/wrreq} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[7]/input_fifo_A/q} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[7]/input_fifo_A/rdempty} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[7]/input_fifo_A/wrfull} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[7]/input_fifo_A/sub_wire0} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[7]/input_fifo_A/sub_wire1} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[7]/input_fifo_A/sub_wire2}
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+run -all
+# ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(32)
+#    Time: 2675 ps  Iteration: 0  Instance: /Minilab1_tb
+# Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 32
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+run -all
+# ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(32)
+#    Time: 2675 ps  Iteration: 0  Instance: /Minilab1_tb
+# Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 32
+add wave -position insertpoint  \
+{sim:/Minilab1_tb/iDUT/fifo_gen[6]/input_fifo_A/aclr} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[6]/input_fifo_A/data} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[6]/input_fifo_A/rdclk} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[6]/input_fifo_A/rdreq} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[6]/input_fifo_A/wrclk} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[6]/input_fifo_A/wrreq} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[6]/input_fifo_A/q} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[6]/input_fifo_A/rdempty} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[6]/input_fifo_A/wrfull} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[6]/input_fifo_A/sub_wire0} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[6]/input_fifo_A/sub_wire1} \
+{sim:/Minilab1_tb/iDUT/fifo_gen[6]/input_fifo_A/sub_wire2}
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+run -all
+# ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(32)
+#    Time: 2675 ps  Iteration: 0  Instance: /Minilab1_tb
+# Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 32
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv failed with 6 errors.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 1 failed with 6 errors.
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv failed with 8 errors.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 1 failed with 8 errors.
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv failed with 1 errors.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 1 failed with 1 error.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2912) Port 'CLOCK_50' not found in module 'Minilab1' (1st connection).
+# ** Error (suppressible): I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2912) Port 'KEY' not found in module 'Minilab1' (2nd connection).
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=1.
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.
+# Break key hit
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.
+# Break key hit
+restart
+# No Design Loaded!
+vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.Minilab1_tb -voptargs=+acc
+# vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.Minilab1_tb -voptargs="+acc" 
+# Start time: 12:15:01 on Feb 04,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: $MODEL_TECH/../intel/verilog/src/altera_mf.v(31792): (vopt-2685) [TFMPC] - Too few port connections for 'DCFIFO_MW'.  Expected 14, found 13.
+# ** Warning: $MODEL_TECH/../intel/verilog/src/altera_mf.v(31792): (vopt-2718) [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Note: (vopt-143) Recognized 1 FSM in module "mem_wrapper(fast)".
+# ** Warning: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2685) [TFMPC] - Too few port connections for 'iDUT'.  Expected 13, found 2.
+# ** Warning: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2718) [TFMPC] - Missing connection for port 'SW'.
+# ** Warning: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2718) [TFMPC] - Missing connection for port 'LEDR'.
+# ** Warning: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2718) [TFMPC] - Missing connection for port 'HEX5'.
+# ** Warning: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2718) [TFMPC] - Missing connection for port 'HEX4'.
+# ** Warning: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2718) [TFMPC] - Missing connection for port 'HEX3'.
+# ** Warning: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2718) [TFMPC] - Missing connection for port 'HEX2'.
+# ** Warning: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2718) [TFMPC] - Missing connection for port 'HEX1'.
+# ** Warning: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2718) [TFMPC] - Missing connection for port 'HEX0'.
+# ** Warning: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2718) [TFMPC] - Missing connection for port 'CLOCK4_50'.
+# ** Warning: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2718) [TFMPC] - Missing connection for port 'CLOCK3_50'.
+# ** Warning: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(14): (vopt-2718) [TFMPC] - Missing connection for port 'CLOCK2_50'.
+# ** Note: (vopt-143) Recognized 1 FSM in module "Minilab1(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=16.
+# Loading sv_std.std
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'KEY'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1.sv(22).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT File: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+add wave -position insertpoint  \
+sim:/Minilab1_tb/iDUT/macout
+run -all
+# ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(32)
+#    Time: 2675 ps  Iteration: 0  Instance: /Minilab1_tb
+# Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 32
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv failed with 2 errors.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 1 failed with 2 errors.
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv failed with 1 errors.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 1 failed with 1 error.
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv failed with 1 errors.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 1 failed with 1 error.
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.

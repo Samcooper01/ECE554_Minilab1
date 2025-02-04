@@ -11,7 +11,7 @@ localparam CALC = 3'b011;
 localparam WAIT = 3'b100;
 localparam DONE = 3'b101;
 
-Minilab1 iDUT(.clk(clk), .rst_n(rst_n));
+Minilab1 iDUT(.CLOCK_50(clk), .KEY(rst_n));
 
 initial begin
     clk = 0;
