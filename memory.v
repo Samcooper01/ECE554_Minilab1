@@ -12,7 +12,7 @@ module mem_wrapper (
 );
 
     wire [63:0] mem_rdata;
-    reg [3:0] read_address;  // Latched address for the read operation
+    reg [4:0] read_address;  // Latched address for the read operation
 	 reg [3:0] delay_counter; // Counter for variable delay
 
     // State machine for variable delay

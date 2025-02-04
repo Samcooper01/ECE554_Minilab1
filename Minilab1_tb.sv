@@ -4,6 +4,13 @@ module Minilab1_tb ();
 logic clk;
 logic rst_n;
 
+localparam IDLE = 3'b000;
+localparam FILL_BUF = 3'b001;
+localparam FILL_FIFO = 3'b010;
+localparam CALC = 3'b011;
+localparam WAIT = 3'b100;
+localparam DONE = 3'b110;
+
 Minilab1 iDUT(.clk(clk), .rst_n(rst_n));
 
 initial begin
@@ -11,6 +18,16 @@ initial begin
     rst_n = 0;
 
     repeat (5) @(posedge clk);
+
+    rst_n = 1;
+
+   wait(iDUT.rd_addr == 9);
+
+    wait(iDUT.state == FILL_FIFO);
+    
+
+    wait(iDUT.buf_rd_addr == 8);
+    #100
 
     $stop;
 
