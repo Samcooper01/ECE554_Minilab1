@@ -164,8 +164,11 @@ generate
 endgenerate
 
 //read from mem write to buffer address counter
-always @(posedge clk or negedge rst_n) begin
-  if(~rst_n | ~buf_begin_fill) begin
+always_ff @(posedge clk or negedge rst_n) begin
+  if(~rst_n) begin
+    rd_addr <= '0;
+  end
+  else if (~buf_begin_fill) begin
     rd_addr <= '0;
   end
   else if (buf_begin_fill & rd_valid) begin
@@ -175,7 +178,11 @@ end
 
 //read from buffer write to fifo address counter
 always @(posedge clk or negedge rst_n) begin
-  if(~rst_n | ~fifo_begin_fill) begin
+  if(~rst_n) begin
+    buf_rd_addr <= '0;
+    clear_col_counter_ff <= 0;
+  end
+  else if (~fifo_begin_fill) begin
     buf_rd_addr <= '0;
     clear_col_counter_ff <= 0;
   end
@@ -316,6 +323,7 @@ always @(posedge clk, negedge rst_n) begin
 end
 
 always_comb begin
+    preread = 0;
     buf_begin_fill = 0;
     fifo_begin_fill= 0;
     start_calc = 0;
