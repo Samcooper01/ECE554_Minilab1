@@ -41,13 +41,12 @@ localparam DONE = 3'b101;
 //A and B buffers to hold parsed data
 logic [0:63] datain_A [0:7];
 logic [0:63] datain_B;
-logic [4:0] buf_rd_addr, buf_rd_addr_ff;
+logic [4:0] buf_rd_addr;
 
 //FIFO Signals
-logic [7:0] datain_FIFOA, datain_FIFOA_ff, datain_FIFOB_ff, datain_FIFOB;
+logic [7:0] datain;
 logic wrreq_A  [0:7];
-logic wrreq_A_ff  [0:7];
-logic wwreq_B, wrreq_B_ff;
+logic wwreq_B;
 logic [3:0] a_col_sel;
 logic [3:0] b_col_sel;
 logic [3:0] col_counter;
@@ -56,7 +55,6 @@ logic clear_col_counter_ff;
 logic buffer_a_or_b;
 logic [2:0] A_read_sel;
 logic [7:0] a_out [7:0];
-logic [7:0] a_out_ff [7:0];
 
 logic preread;
 
@@ -122,7 +120,7 @@ generate
         .En(En[i]),
         .start_calc(start_calc),
         .Clr(Clr),
-        .Ain(a_out_ff[i]),
+        .Ain(a_out[i]),
         .Bin(Bin[i]),
         .Couts(Couts[i]),
         .EnOut(En[i+1]),
@@ -140,11 +138,11 @@ generate
     FIFO input_fifo_A
     (
       .aclr(~rst_n),
-      .data(datain_FIFOA_ff),
+      .data(datain),
       .rdclk(clk),
       .rdreq(En[z] | preread),
       .wrclk(clk),
-      .wrreq(wrreq_A_ff[z]),
+      .wrreq(wrreq_A[z]),
       .q(a_out[z]),
       .rdempty(rdempty_A[z]),
       .wrfull(wrfull_A[z])
@@ -154,62 +152,20 @@ generate
     FIFO input_fifo_B
     (
       .aclr(~rst_n),
-      .data(datain_FIFOB_ff),
+      .data(datain),
       .rdclk(clk),
       .rdreq(start_read),
       .wrclk(clk),
-      .wrreq(wrreq_B_ff),
+      .wrreq(wwreq_B),
       .q(Bin[0]),
       .rdempty(rdempty_B),
       .wrfull(wrfull_B)
     );
 endgenerate
 
-always_ff @(posedge clk or negedge rst_n) begin
-  if(~rst_n) begin
-    wrreq_A_ff[0] <= 0;
-    wrreq_A_ff[1] <= 0;
-    wrreq_A_ff[2] <= 0;
-    wrreq_A_ff[3] <= 0;
-    wrreq_A_ff[4] <= 0;
-    wrreq_A_ff[5] <= 0;
-    wrreq_A_ff[6] <= 0;
-    wrreq_A_ff[7] <= 0;
-    wrreq_B_ff <= 0;
-  end
-  else begin
-    datain_FIFOA_ff <= datain_FIFOA;
-    datain_FIFOB_ff <= datain_FIFOB;
-    wrreq_A_ff[0] <= wrreq_A[0];
-    wrreq_A_ff[1] <= wrreq_A[1];
-    wrreq_A_ff[2] <= wrreq_A[2];
-    wrreq_A_ff[3] <= wrreq_A[3];
-    wrreq_A_ff[4] <= wrreq_A[4];
-    wrreq_A_ff[5] <= wrreq_A[5];
-    wrreq_A_ff[6] <= wrreq_A[6];
-    wrreq_A_ff[7] <= wrreq_A[7];
-    wrreq_B_ff <= wwreq_B;
-  end
-end
-
-//pipeline
-always_ff @(posedge clk) begin
-  a_out_ff[0] <= a_out[0];
-  a_out_ff[1] <= a_out[1];
-  a_out_ff[2] <= a_out[2];
-  a_out_ff[3] <= a_out[3];
-  a_out_ff[4] <= a_out[4];
-  a_out_ff[5] <= a_out[5];
-  a_out_ff[6] <= a_out[6];
-  a_out_ff[7] <= a_out[7];
-end
-
 //read from mem write to buffer address counter
 always_ff @(posedge clk or negedge rst_n) begin
   if(~rst_n) begin
-    rd_addr <= '0;
-  end
-  else if (~buf_begin_fill) begin
     rd_addr <= '0;
   end
   else if (buf_begin_fill & rd_valid) begin
@@ -218,20 +174,17 @@ always_ff @(posedge clk or negedge rst_n) begin
 end
 
 //read from buffer write to fifo address counter
-always_ff @(posedge clk or negedge rst_n) begin
+always @(posedge clk or negedge rst_n) begin
   if(~rst_n) begin
     buf_rd_addr <= '0;
-    buf_rd_addr_ff <= -1;
     clear_col_counter_ff <= 0;
   end
   else if (~fifo_begin_fill) begin
     buf_rd_addr <= '0;
-    buf_rd_addr_ff <= -1;
     clear_col_counter_ff <= 0;
   end
   else if (fifo_begin_fill & (col_counter == 7)) begin
     buf_rd_addr <= buf_rd_addr + 1'b1;
-    buf_rd_addr_ff <= buf_rd_addr_ff + 1'b1;
     clear_col_counter_ff <= 1;
   end
   else if(fifo_begin_fill) begin
@@ -242,7 +195,7 @@ end
 assign clear_col_counter = (~rst_n | ~fifo_begin_fill) ? 0 : (fifo_begin_fill & (col_counter == 7));
 
 //column counter for fifo
-always_ff @(posedge clk or negedge rst_n) begin
+always @(posedge clk or negedge rst_n) begin
   if(~rst_n) begin
     col_counter <= 0;
   end
@@ -257,39 +210,38 @@ end
 assign buffer_a_or_b = (buf_rd_addr == 0);
 
 //if buffer_a_or_b == 1 then buffer b is select else buffer a is select
-assign datain_FIFOB = (col_counter == 7) ? datain_B[56:63] :
-                      (col_counter == 6) ? datain_B[48:55] : 
-                      (col_counter == 5) ? datain_B[40:47] :
-                      (col_counter == 4) ? datain_B[32:39] :
-                      (col_counter == 3) ? datain_B[24:31] :
-                      (col_counter == 2) ? datain_B[16:23] :
-                      (col_counter == 1) ? datain_B[8:15] :
-                      (col_counter == 0) ? datain_B[0:7] : datain_B[0:7];
-
-assign datain_FIFOA = (col_counter == 7) ? datain_A[buf_rd_addr][56:63] :
-                      (col_counter == 6) ? datain_A[buf_rd_addr][48:55] : 
-                      (col_counter == 5) ? datain_A[buf_rd_addr][40:47] :
-                      (col_counter == 4) ? datain_A[buf_rd_addr][32:39] :
-                      (col_counter == 3) ? datain_A[buf_rd_addr][24:31] :
-                      (col_counter == 2) ? datain_A[buf_rd_addr][16:23] :
-                      (col_counter == 1) ? datain_A[buf_rd_addr][8:15] :
-                      (col_counter == 0) ? datain_A[buf_rd_addr][0:7] : datain_A[buf_rd_addr][0:7];                       
+assign datain = (buffer_a_or_b) ? ((col_counter == 7) ? datain_B[56:63] :
+                                  (col_counter == 6) ? datain_B[48:55] : 
+                                  (col_counter == 5) ? datain_B[40:47] :
+                                  (col_counter == 4) ? datain_B[32:39] :
+                                  (col_counter == 3) ? datain_B[24:31] :
+                                  (col_counter == 2) ? datain_B[16:23] :
+                                  (col_counter == 1) ? datain_B[8:15] :
+                                  (col_counter == 0) ? datain_B[0:7] : datain_B[0:7]) :
+                                  ((col_counter == 7) ? datain_A[buf_rd_addr-1][56:63] :
+                                  (col_counter == 6) ? datain_A[buf_rd_addr-1][48:55] : 
+                                  (col_counter == 5) ? datain_A[buf_rd_addr-1][40:47] :
+                                  (col_counter == 4) ? datain_A[buf_rd_addr-1][32:39] :
+                                  (col_counter == 3) ? datain_A[buf_rd_addr-1][24:31] :
+                                  (col_counter == 2) ? datain_A[buf_rd_addr-1][16:23] :
+                                  (col_counter == 1) ? datain_A[buf_rd_addr-1][8:15] :
+                                  (col_counter == 0) ? datain_A[buf_rd_addr-1][0:7] : datain_A[buf_rd_addr-1][0:7]);
 
 
 
 //write fifo EN flop
 assign wwreq_B = (~rst_n) ? 0 : ((buf_rd_addr == 0) & fifo_begin_fill);
-assign wrreq_A[0] = (~rst_n) ? 0 : ((buf_rd_addr == 0) & fifo_begin_fill);
-assign wrreq_A[1] = (~rst_n) ? 0 : ((buf_rd_addr == 1) & fifo_begin_fill);
-assign wrreq_A[2] = (~rst_n) ? 0 : ((buf_rd_addr == 2) & fifo_begin_fill);
-assign wrreq_A[3] = (~rst_n) ? 0 : ((buf_rd_addr == 3) & fifo_begin_fill);
-assign wrreq_A[4] = (~rst_n) ? 0 : ((buf_rd_addr == 4) & fifo_begin_fill);
-assign wrreq_A[5] = (~rst_n) ? 0 : ((buf_rd_addr == 5) & fifo_begin_fill);
-assign wrreq_A[6] = (~rst_n) ? 0 : ((buf_rd_addr == 6) & fifo_begin_fill);
-assign wrreq_A[7] = (~rst_n) ? 0 : ((buf_rd_addr == 7) & fifo_begin_fill);
+assign wrreq_A[0] = (~rst_n) ? 0 : ((buf_rd_addr == 1) & fifo_begin_fill);
+assign wrreq_A[1] = (~rst_n) ? 0 : ((buf_rd_addr == 2) & fifo_begin_fill);
+assign wrreq_A[2] = (~rst_n) ? 0 : ((buf_rd_addr == 3) & fifo_begin_fill);
+assign wrreq_A[3] = (~rst_n) ? 0 : ((buf_rd_addr == 4) & fifo_begin_fill);
+assign wrreq_A[4] = (~rst_n) ? 0 : ((buf_rd_addr == 5) & fifo_begin_fill);
+assign wrreq_A[5] = (~rst_n) ? 0 : ((buf_rd_addr == 6) & fifo_begin_fill);
+assign wrreq_A[6] = (~rst_n) ? 0 : ((buf_rd_addr == 7) & fifo_begin_fill);
+assign wrreq_A[7] = (~rst_n) ? 0 : ((buf_rd_addr == 8) & fifo_begin_fill);
 
 //Data store flop
-always_ff @(posedge clk or negedge rst_n) begin
+always @(posedge clk or negedge rst_n) begin
   if(~rst_n) begin
     datain_B <= '0;
     datain_A[0] <= '0;
@@ -332,7 +284,7 @@ assign fifo_all_empty = rdempty_A[0] & rdempty_A[1] & rdempty_A[2] & rdempty_A[3
 assign read_B = (~rst_n) ? 0 : (((A_read_sel == 0) & start_read));
 
 //A read inc
-always_ff @(posedge clk or negedge rst_n) begin
+always @(posedge clk or negedge rst_n) begin
   if(~rst_n) begin
     A_read_sel <= '0;
   end
@@ -360,7 +312,7 @@ end
 assign En[0] = start_calc & ~rdempty_0_ff2;
 
 // next state flop
-always_ff @(posedge clk, negedge rst_n) begin
+always @(posedge clk, negedge rst_n) begin
   if (~rst_n)
     state <= IDLE;
   else
