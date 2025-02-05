@@ -17,7 +17,9 @@ output logic [7:0] Bout
 
 reg [DATA_WIDTH*3-1:0]sum_int;
 
-logic En_ff;
+logic En_ff, En_int_ff;
+
+logic [DATA_WIDTH*3-1:0] mult_ff;
 
 always_ff @(posedge clk, negedge rst_n) begin 
     if (!rst_n) begin 
@@ -26,8 +28,18 @@ always_ff @(posedge clk, negedge rst_n) begin
     else if (Clr) begin
         sum_int = 0;
     end
-    else if (En) begin
-        sum_int = sum_int + (Ain * Bin);
+    else if (En_int_ff) begin
+        sum_int = sum_int + mult_ff;
+    end
+end
+
+always_ff @(posedge clk) begin
+    En_int_ff <= En;
+end
+
+always_ff @(posedge clk) begin
+    if(En) begin
+        mult_ff <= (Ain * Bin);
     end
 end
 
