@@ -40,7 +40,7 @@ OL;O;2023.3;77
 R2
 vFIFO
 2I:/ECE554/Minilab1/ECE554_Minilab1/FIFO.v
-Z4 !s110 1738700425
+Z4 !s110 1738706531
 !i10b 1
 !s100 b_LGzC;I??7dT_zRSKMRA2
 I?4[aaTNMZ@hGo5o<^J3n[2
@@ -48,14 +48,14 @@ Z5 dI:/ECE554/Minilab1/ECE554_Minilab1
 w1738108121
 8I:/ECE554/Minilab1/ECE554_Minilab1/FIFO.v
 FI:/ECE554/Minilab1/ECE554_Minilab1/FIFO.v
-!i122 101
+!i122 107
 L0 40 67
 Z6 VDg1SIo80bB@j0V0VzS_@n1
 Z7 OL;L;2023.3;77
 r1
 !s85 0
 31
-!s108 1738700424.000000
+!s108 1738706530.000000
 !s107 I:/ECE554/Minilab1/ECE554_Minilab1/FIFO.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/ECE554/Minilab1/ECE554_Minilab1/FIFO.v|
 !i113 0
@@ -74,38 +74,38 @@ R5
 w1738695530
 8I:/ECE554/Minilab1/ECE554_Minilab1/mac.sv
 FI:/ECE554/Minilab1/ECE554_Minilab1/mac.sv
-!i122 102
+!i122 108
 L0 1 63
 R6
 R7
 r1
 !s85 0
 31
-Z10 !s108 1738700425.000000
+!s108 1738706531.000000
 !s107 I:/ECE554/Minilab1/ECE554_Minilab1/mac.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/Minilab1/ECE554_Minilab1/mac.sv|
 !i113 0
-Z11 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R3
 n@m@a@c
 vmem_wrapper
 2I:/ECE554/Minilab1/ECE554_Minilab1/memory.v
-Z12 !s110 1738700426
+Z11 !s110 1738706532
 !i10b 1
 !s100 M3jiLfB;XFR[V<[F]GN6V1
 IZzON[RXV_TlfUWd1LVX9R1
 R5
-Z13 w1738280763
+Z12 w1738280763
 8I:/ECE554/Minilab1/ECE554_Minilab1/memory.v
 FI:/ECE554/Minilab1/ECE554_Minilab1/memory.v
-!i122 103
+!i122 109
 L0 2 66
 R6
 R7
 r1
 !s85 0
 31
-R10
+Z13 !s108 1738706532.000000
 !s107 I:/ECE554/Minilab1/ECE554_Minilab1/memory.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/ECE554/Minilab1/ECE554_Minilab1/memory.v|
 !i113 0
@@ -114,33 +114,33 @@ R3
 vMinilab1
 2I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1.sv
 R9
-R12
+R11
 !i10b 1
-!s100 764l3n_zDaNQM]XT0W60z0
-IZla6jjBR<R5NY_GE^e^Og1
+!s100 PDedS?Dn[62KU46hn3:=S3
+IU5lZ2PVc`2Sz9^z9KD<GY1
 S1
 R5
-w1738700416
+w1738705099
 8I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1.sv
 FI:/ECE554/Minilab1/ECE554_Minilab1/Minilab1.sv
-!i122 104
-L0 1 580
+!i122 110
+L0 1 588
 R6
 R7
 r1
 !s85 0
 31
-Z14 !s108 1738700426.000000
+R13
 !s107 I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1.sv|
 !i113 0
-R11
+R10
 R3
 n@minilab1
 vMinilab1_tb
 2I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv
 R9
-Z15 !s110 1738700427
+Z14 !s110 1738706533
 !i10b 1
 !s100 [8TE1H3kdfIhA5cgDJKkQ1
 Ic5K;6]2_7nRczN2GK[11;3
@@ -149,38 +149,38 @@ R5
 w1738699519
 8I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv
 FI:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv
-!i122 105
+!i122 111
 L0 3 38
 R6
 R7
 r1
 !s85 0
 31
-R14
+Z15 !s108 1738706533.000000
 !s107 I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv|
 !i113 0
-R11
+R10
 R3
 n@minilab1_tb
 vrom
 2I:/ECE554/Minilab1/ECE554_Minilab1/rom.v
-R15
+R14
 !i10b 1
 !s100 gIjok9nLdKAWK47?alcLX2
 IYeIcjKbCkZ>;e6G9lMAS73
 R5
-R13
+R12
 8I:/ECE554/Minilab1/ECE554_Minilab1/rom.v
 FI:/ECE554/Minilab1/ECE554_Minilab1/rom.v
-!i122 106
+!i122 112
 L0 40 61
 R6
 R7
 r1
 !s85 0
 31
-!s108 1738700427.000000
+R15
 !s107 I:/ECE554/Minilab1/ECE554_Minilab1/rom.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/ECE554/Minilab1/ECE554_Minilab1/rom.v|
 !i113 0

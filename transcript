@@ -836,3 +836,10 @@ run -all
 # Compile of Minilab1_tb.sv was successful.
 # Compile of rom.v was successful.
 # 6 compiles, 0 failed with no errors.
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.
