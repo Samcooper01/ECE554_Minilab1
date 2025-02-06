@@ -1,0 +1,66 @@
+vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.Minilab1_tb -voptargs=+acc
+# vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.Minilab1_tb -voptargs="+acc" 
+# Start time: 18:17:35 on Feb 05,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.Minilab1_tb(fast)
+# Loading work.Minilab1(fast)
+# Loading work.mem_wrapper(fast)
+# Loading work.rom(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.altsyncram_body(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_MEMORY_INITIALIZATION(fast)
+# Loading work.MAC(fast)
+# Loading work.FIFO(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_mixed_widths(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_async(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__2)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_fefifo(fast__1)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_low_latency(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_DEVICE_FAMILIES(fast__3)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.ALTERA_MF_HINT_EVALUATION(fast)
+# Loading C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf.dcfifo_dffpipe(fast__3)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'KEY'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1.sv(22).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT File: I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv Line: 14
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (5) for port 'address'. The port definition is at: I:/ECE554/Minilab1/ECE554_Minilab1/rom.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /Minilab1_tb/iDUT/iMEM/memory File: I:/ECE554/Minilab1/ECE554_Minilab1/memory.v Line: 25
+run -all
+# Warning : Address pointed at port A is out of bound!
+# Time: 1375  Instance: Minilab1_tb.iDUT.iMEM.memory.altsyncram_component.m_default.altsyncram_inst
+# Warning : Address pointed at port A is out of bound!
+# Time: 1375  Instance: Minilab1_tb.iDUT.iMEM.memory.altsyncram_component.m_default.altsyncram_inst
+# Testing matrix multiplier with example memory loaded
+# Test 1: First vector element expected to be 0x30C
+# Test 1 Passed
+# 
+# Test 2: Second vector element expected to be 0x54C
+# Test 2 Passed
+# 
+# Test 3: Third vector element expected to be 0x78C
+# Test 3 Passed
+# 
+# Test 4: Fourth vector element expected to be 0x9CC
+# Test 4 Passed
+# 
+# Test 5: Fifth vector element expected to be 0xC0C
+# Test 5 Passed
+# 
+# Test 6: Sixth vector element expected to be 0xE4C
+# Test 6 Passed
+# 
+# Test 7: Seventh vector element expected to be 0x108C
+# Test 7 Passed
+# 
+# Test 8: Eigth vector element expected to be 0x12CC
+# Test 8 Passed
+# 
+# ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(81)
+#    Time: 2805 ps  Iteration: 0  Instance: /Minilab1_tb
+# Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 81
