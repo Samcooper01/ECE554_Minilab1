@@ -47,8 +47,6 @@ logic [4:0] buf_rd_addr;
 logic [7:0] datain;
 logic wrreq_A  [0:7];
 logic wwreq_B;
-logic [3:0] a_col_sel;
-logic [3:0] b_col_sel;
 logic [3:0] col_counter;
 logic clear_col_counter;
 logic clear_col_counter_ff;
@@ -58,13 +56,12 @@ logic [7:0] a_out [7:0];
 
 logic preread;
 
-logic [0:MATRIX_COLUMNS_A-1] rdreq_A, rdempty_A, wrfull_A;
+logic [0:MATRIX_COLUMNS_A-1] rdempty_A, wrfull_A;
 
-logic rdreq_B, rdempty_B, wrfull_B;
+logic rdempty_B, wrfull_B;
 
 //State Machine
 logic [2:0] state, next_state;
-logic all_full, all_empty;
 logic buf_begin_fill;
 logic buf_all_full;
 logic fifo_begin_fill;
@@ -88,13 +85,6 @@ logic read_B;
 logic read_A [7:0];
 logic rdempty_0_ff;
 logic rdempty_0_ff2;
-logic rdempty_1_ff;
-logic rdempty_2_ff;
-logic rdempty_3_ff;
-logic rdempty_4_ff;
-logic rdempty_5_ff;
-logic rdempty_6_ff;
-logic rdempty_7_ff;
 
 //Memory Interface
 mem_wrapper iMEM( .clk(clk), 

@@ -5,12 +5,12 @@ Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
 Top level modules:
 	rom
 
-} {} {}} I:/ECE554/Minilab1/ECE554_Minilab1/mac.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/Minilab1/ECE554_Minilab1/mac.sv
+} {} {}} I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1.sv
 Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
--- Compiling module MAC
+-- Compiling module Minilab1
 
 Top level modules:
-	MAC
+	Minilab1
 
 } {} {}} I:/ECE554/Minilab1/ECE554_Minilab1/FIFO.v {1 {vlog -work work -vopt -stats=none I:/ECE554/Minilab1/ECE554_Minilab1/FIFO.v
 Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
@@ -19,12 +19,12 @@ Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
 Top level modules:
 	FIFO
 
-} {} {}} I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv
+} {} {}} I:/ECE554/Minilab1/ECE554_Minilab1/mac.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/Minilab1/ECE554_Minilab1/mac.sv
 Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
--- Compiling module Minilab1_tb
+-- Compiling module MAC
 
 Top level modules:
-	Minilab1_tb
+	MAC
 
 } {} {}} I:/ECE554/Minilab1/ECE554_Minilab1/memory.v {1 {vlog -work work -vopt -stats=none I:/ECE554/Minilab1/ECE554_Minilab1/memory.v
 Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
@@ -32,5 +32,12 @@ Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
 
 Top level modules:
 	mem_wrapper
+
+} {} {}} I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module Minilab1_tb
+
+Top level modules:
+	Minilab1_tb
 
 } {} {}}
