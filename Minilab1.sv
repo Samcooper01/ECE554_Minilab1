@@ -48,12 +48,9 @@ logic [7:0] datain_FIFOA, datain_FIFOA_ff, datain_FIFOB_ff, datain_FIFOB;
 logic wrreq_A  [0:7];
 logic wrreq_A_ff  [0:7];
 logic wwreq_B, wrreq_B_ff;
-logic [3:0] a_col_sel;
-logic [3:0] b_col_sel;
 logic [3:0] col_counter;
 logic clear_col_counter;
 logic clear_col_counter_ff;
-logic buffer_a_or_b;
 logic [2:0] A_read_sel;
 logic [7:0] a_out [7:0];
 logic [7:0] a_out_ff [7:0];
@@ -83,20 +80,12 @@ logic wait_req;
 
 //8 MACS
 logic En [8:0];
-logic [7:0] Ain [7:0];
 logic [7:0] Bin [8:0];
 logic [23:0] Couts [7:0];
 logic read_B;
 logic read_A [7:0];
 logic rdempty_0_ff;
 logic rdempty_0_ff2;
-logic rdempty_1_ff;
-logic rdempty_2_ff;
-logic rdempty_3_ff;
-logic rdempty_4_ff;
-logic rdempty_5_ff;
-logic rdempty_6_ff;
-logic rdempty_7_ff;
 
 //Memory Interface
 mem_wrapper iMEM( .clk(clk), 
@@ -254,9 +243,6 @@ always_ff @(posedge clk or negedge rst_n) begin
   end
 end
 
-assign buffer_a_or_b = (buf_rd_addr == 0);
-
-//if buffer_a_or_b == 1 then buffer b is select else buffer a is select
 assign datain_FIFOB = (col_counter == 7) ? datain_B[56:63] :
                       (col_counter == 6) ? datain_B[48:55] : 
                       (col_counter == 5) ? datain_B[40:47] :

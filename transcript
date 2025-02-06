@@ -1,7 +1,18 @@
+# Compile of FIFO.v was successful.
+# Compile of mac.sv was successful.
+# Compile of memory.v was successful.
+# Compile of Minilab1.sv was successful.
+# Compile of Minilab1_tb.sv was successful.
+# Compile of rom.v was successful.
+# 6 compiles, 0 failed with no errors.
+# Load canceled
 vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.Minilab1_tb -voptargs=+acc
 # vsim -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/altera_mf -L C:/intelFPGA_lite/23.1std/questa_fse/intel/verilog/220model -vopt work.Minilab1_tb -voptargs="+acc" 
-# Start time: 18:17:35 on Feb 05,2025
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Start time: 18:42:34 on Feb 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "Minilab1(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
 # Loading work.Minilab1_tb(fast)
 # Loading work.Minilab1(fast)
@@ -62,5 +73,5 @@ run -all
 # Test 8 Passed
 # 
 # ** Note: $stop    : I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv(81)
-#    Time: 2805 ps  Iteration: 0  Instance: /Minilab1_tb
+#    Time: 2735 ps  Iteration: 0  Instance: /Minilab1_tb
 # Break in Module Minilab1_tb at I:/ECE554/Minilab1/ECE554_Minilab1/Minilab1_tb.sv line 81
